@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --main-bg: hsl(185, 75%, 39%);
+    --headings: hsl(229, 23%, 23%);
+    --gray-blue: hsl(227, 10%, 46%);
+    --gray: hsl(0, 0%, 59%);
+}
+
+img{
+    width: 100%;
+}
+
+body{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: var(--main-bg);
+}
+
+body::before{
+    content: "";
+    position: fixed;
+     overflow: hidden; 
+    background-image: url("./images/bg-pattern-top.svg");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    transform: rotate(105deg) scale(-1, 1);
+    top: -78%;
+    left: -25%; 
+    z-index: -1;
+}
+
+body::after{
+    content: "";
+    position: fixed;
+     overflow: hidden; 
+    background-image: url("./images/bg-pattern-bottom.svg");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 48%;
+    right: -50%; 
+    z-index: -1;
+}
+
+
+
+.container{
+    max-width: 1440px;
+    margin: 1em;
+}
+
+.main{
+    width: 100%;
+    border: 1px black solid;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white;
+    z-index: 100;
+}
+
+.card-bg{
+    position: relative;
+}
+
+#user-img{
+    position: absolute;
+    border-radius: 50%;
+    border: 5px solid white;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    object-fit: contain;
+    width: 30%;
+
+}
+
+.user{
+    margin-top: 4.5em;
+    text-align: center;
+}
+
+
+.user h1, .user-stat h2{
+    font-size: 1.1rem;
+    color: var(--headings);
+    margin-bottom: 0.5em;
+}
+
+#user-no{
+    margin-left: 0.5em;
+    font-weight: 400;
+    color: var(--gray);
+}
+
+.user p{
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.horizontal-line{
+    border-bottom: 1px solid var(--gray);
+    margin: 1.5em 0;
+}
+
+.user-stat{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.user-stat h2{
+    margin-bottom: 0.2em;
+}
+
+.user-stat p{
+    color: var(--gray);
+    font-size: 0.8rem;
+}
+
+.footer{
+    margin-top: 0;
+}
+
+/*The following line is to adjust the top-left circle in the background since it does not scale properly*/
+
+@media(max-width: 800px){
+    body::before{
+        content: "";
+        position: fixed;
+         overflow: hidden; 
+        background-image: url("./images/bg-pattern-top.svg");
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        transform: rotate(100deg) scale(-1, 1);
+        top: -40%;
+        left: -40%; 
+        z-index: -1;
+    }
+}
+
+@media(max-width: 400px){
+    body::before{
+        content: "";
+        position: fixed;
+         overflow: hidden; 
+        background-image: url("./images/bg-pattern-top.svg");
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        transform: rotate(100deg) scale(-1, 1);
+        top: -40%;
+        left: -80%; 
+        z-index: -1;
+    }
+}
